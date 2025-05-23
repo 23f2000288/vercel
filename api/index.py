@@ -11,7 +11,7 @@ students_list = [{"name":"Jo4t7r","marks":74},{"name":"FBuF2rvb","marks":91},{"n
 # Convert list to dictionary for fast lookup
 students = {student["name"]: student["marks"] for student in students_list}
 
-@app.route('/api', methods=['GET'])
+@app.route('/', methods=['GET'])
 def get_marks():
     names = request.args.getlist('name')
     marks = [students.get(name, 0) for name in names]
